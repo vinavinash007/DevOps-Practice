@@ -1,0 +1,238 @@
+--Git--
+
+Git Branch 
+#Git Branch B1 \\ to create a new branch 
+
+Master 
+
+Git checkout B1
+   or
+Git switch B1
+
+both checkout and switch are used to move to different branch and master
+
+
+Git merge branch_name -> merge 
+
+Git Branch -d branch_name -> deletion 
+
+create & switch to new branch 
+-Git checkout -b branch_name
+\\ here -b is used to create a new brach 
+
+
+cd "/c/Users/322071/OneDrive - NTT DATA, Inc/Desktop/DevOps/Git/Git File"
+
+
+
+Git Branch
+
+
+created a github repo and added it using VS Code
+
+echo "# Remote_Demo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/vinavinash007/Remote_Demo.git
+git push -u origin main
+
+
+
+Git Pull 
+
+This needs to be done from GitHub where we do any changes and commit 
+we just have to put 
+
+
+
+
+1> To change branch nane:
+git branch -m main
+
+2> To connect Local Repo to Remote Repo
+git remote add origin repo_link
+
+3> To push Local Repo files
+git push -u origin main
+
+4> To pull modification done in remote repo to local repo 
+git pull
+
+5> To push another branch file in remote repo: -u is optional / -u origin branch_name
+git push -u origin branch_name
+git push
+
+
+
+
+
+
+
+DevOps Concept
+
+This is the core Git collaboration flow:
+
+Local code → git add → git commit → git push → GitHub
+GitHub changes → git pull → Local code
+
+
+
+
+
+
+
+git clone copies a remote repository from GitHub/Azure Repos to your laptop.
+
+GitHub Repo → git clone → Local Laptop
+
+
+
+
+1p-gcesgsc-30
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                     Introduction to Docker
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+What is a Docker ?
+- Docker is a containerization platform for develpoing, packaging, shipping and running applications.
+Docker is an open-source platform that uses operating system-level virtualization to deliver software in lightweight, isolated packages called containers.
+
+why do we need a Docker ?
+-  developer send the packaging image to tester so that there is no conflict in running the file 
+Docker solves environment inconsistency
+
+what is a containers?
+A container is a lightweight, isolated package that holds an application and everything it needs to run.
+
+
+
+
+Comparison between Docker and VMs
+
++-------------------------+     +-------------------------+
+
+| App A  | App B  | App C |     |  App A  |  App B  |  App C  |
+| Libs   | Libs   | Libs  |     |  Libs   |  Libs   |  Libs   |
++-------------------------+     +---------+---------+---------+
+
+|     Docker Engine       |     | Guest OS| Guest OS| Guest OS|
++-------------------------+     +---------+---------+---------+
+
+|     Host OS Kernel      |     |        Hypervisor       |
++-------------------------+     +-------------------------+
+
+|    Physical Hardware    |     |    Physical Hardware    |
++-------------------------+     +-------------------------+
+    DOCKER CONTAINERS                    VIRTUAL MACHINES
+	
+	
+	
+Docker isolates at the app level, while VMs isolate at the hardware leve
+
+Dockerfile: A simple text file containing sequential commands (like FROM, RUN, and COPY). 
+It acts as a precise recipe to build a Docker image.Docker Image: A read-only, multi-layered snapshot containing the application code, runtime libraries, and environment variables. 
+It serves as the template for containers.Docker Container: A live, runnable instance of an image. 
+It is an isolated sandbox running your application process on the host machine.Docker Registry / Hub: A storage and distribution system for Docker images. 
+Docker Hub is the default public cloud registry where developers share pre-built images
+	
+Installation Ticket to IT: INC0840963 
+
+kubernetes
+Jenkins windows 
+Docker desktop
+Teraforms
+Ubuntu
+Node.js
+JDK 
+Python 
+MySQL 
+
+
+
+
+
+Docker build .
+
+tag & Name 
+for dockerimage: docker build -t "image_name:01"
+
+
+for node.js: dockerrun -d -p 3000:3000 image-id
+
+Runing multiple container
+
+to stop and remove the container we use --rm
+for node.js: dockerrun -d --rm -p 3001:3000 image-id
+
+for node.js: dockerrun -d --rm -p 3002:3000 image-id
+
+
+
+to give my own name for container we use --name "container_name"
+for node.js: dockerrun -d --rm --name "mywebapp" -p 3000:3000 image-id
+
+
+to stop container
+docker stop container_id
+
+
+
+
+how to see how many containers are running 
+docker ps
+
+
+how to see how many containers are running and stopped containers
+docker ps -a
+
+to remove container
+docker rm container_name_id
+
+to remove container image
+docker rmi imager_name_id
+
+
+to see the list of image
+docker image ls
+
+
+
+
+
+Dockerfile (Python)
+
+
+
+
+
+
+
+Dockerfile (Java)
+
+
+@'
+FROM eclipse-temurin:21-jdk
+
+WORKDIR /app
+
+COPY Palindrome.java .
+
+RUN javac Palindrome.java
+
+ENTRYPOINT ["java", "Palindrome"]
+
+CMD ["madam"]
+'@ | Set-Content Dockerfile
+
+
+
+
+
+
+
+

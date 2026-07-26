@@ -1,0 +1,61 @@
+
+
+
+
+
+
+Next Topic: CI/CD Basics
+
+1.What is CI/CD?
+
+| Term | Full Form                        | Meaning                                                            |
+| ---- | -------------------------------- | ------------------------------------------------------------------ |
+| CI   | Continuous Integration           | Automatically build and test code whenever developers push changes |
+| CD   | Continuous Delivery / Deployment | Automatically prepare or deploy the application to an environment  |
+
+
+
+2.Simple DevOps Flow
+
+Developer writes code
+        ↓
+Pushes code to GitHub / Azure Repos
+        ↓
+Pipeline starts automatically
+        ↓
+Build happens
+        ↓
+Tests run
+        ↓
+Artifact is created
+        ↓
+Application is deployed
+
+
+
+3.CI/CD Example
+git push
+
+1. Checkout code
+2. Install dependencies
+3. Build application
+4. Run tests
+5. Publish artifact
+6. Deploy
+
+
+4. Tools Used for CI/CD
+
+| Tool                   | Use                                          |
+| ---------------------- | -------------------------------------------- |
+| GitHub Actions         | CI/CD for GitHub repos                       |
+| Azure DevOps Pipelines | Enterprise CI/CD, common in corporate setups |
+| Jenkins                | Popular open-source CI/CD server             |
+| GitLab CI              | CI/CD inside GitLab                          |
+| Bamboo                 | CI/CD with Atlassian ecosystem               |
+
+
+
+
+
+

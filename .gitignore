@@ -1,0 +1,4 @@
+MyDevOps/Token.txt
+*.log
+.env
+.DS_Store
