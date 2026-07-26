@@ -1,0 +1,55 @@
+name: First DevOps Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  APP_NAME: DevOps-Practice
+  ENVIRONMENT: Dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print message
+        run: echo "Hello DevOps Pipeline"
+
+      - name: List files
+        run: ls -la
+
+      - name: Show current date
+        run: date
+
+      - name: Show branch name
+        run: echo "Branch is $GITHUB_REF_NAME"
+
+      - name: Show environment variables
+        run: |
+          echo "Application Name: $APP_NAME"
+          echo "Environment: $ENVIRONMENT"
+
+      - name: Simulate build
+        run: |
+          echo "Starting build..."
+          mkdir build-output
+          echo "Build successful" > build-output/result.txt
+          cat build-output/result.txt
+
+      - name: Run basic test
+        run: |
+          echo "Running test..."
+          test -f build-output/result.txt
+          grep "Build successful" build-output/result.txt
+          echo "Test passed"
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: devops-build-output
+          path: build-output/
