@@ -32,7 +32,19 @@ jobs:
       - name: Show environment variables
         run: |
           echo "Application Name: $APP_NAME"
-          echo "Environment: $ENVIRONMENT"
+          echo "Environment: $ENVIRONMENT"      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Python app
+        run: python app/calculator.py
+
+      - name: Run Python tests
+        run: |
+          cd app
+          python -m unittest discover -p "test_*.py"
 
       - name: Simulate build
         run: |
