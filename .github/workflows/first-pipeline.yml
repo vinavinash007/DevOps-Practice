@@ -32,7 +32,8 @@ jobs:
       - name: Show environment variables
         run: |
           echo "Application Name: $APP_NAME"
-          echo "Environment: $ENVIRONMENT"      
+          echo "Environment: $ENVIRONMENT"
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -59,6 +60,9 @@ jobs:
           test -f build-output/result.txt
           grep "Build successful" build-output/result.txt
           echo "Test passed"
+
+      - name: Build Docker image
+        run: docker build -t calculator-app:1.0 .
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
